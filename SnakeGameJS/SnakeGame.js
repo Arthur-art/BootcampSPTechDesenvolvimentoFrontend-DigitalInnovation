@@ -32,8 +32,26 @@ function createSnake() {
   }
 }
 
+//pega o keydown(evento de click do teclado) e chama update()
+document.addEventListener("keydown", update);
+
+//movimento controlado pelo teclado
+function update(event) {
+  if (event.keyCode == 37 && direction != "right") direction = "left";
+  if (event.keyCode == 38 && direction != "down") direction = "up";
+  if (event.keyCode == 39 && direction != "left") direction = "right";
+  if (event.keyCode == 40 && direction != "up") direction = "down";
+}
+
 //Function que atualiza o jogo de tempos em tempos
 function startGame() {
+  //atravessar as paredes com a snake no olano cartesiano
+  if (snake[0].x > 22 * box && direction == "right") snake[0].x = 0;
+  if (snake[0].x < 0 && direction == "left") snake[0].x = 23 * box;
+  if (snake[0].y > 9 * box && direction =="down") snake[0].y =0;
+  if (snake[0].y < 0 && direction == "up") snake[0].y = 10 * box;
+
+
   createBG();
   createSnake();
 
@@ -59,4 +77,4 @@ function startGame() {
 }
 
 //Intervalo de 100 milisegundos para iniciar o jogo e renovar o mesmo
-let game = setInterval(startGame, 100);
+let game = setInterval(startGame, 200);
