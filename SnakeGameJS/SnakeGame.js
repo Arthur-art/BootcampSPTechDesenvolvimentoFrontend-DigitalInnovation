@@ -12,6 +12,11 @@ snake[0] = {
 };
 //variavel com a direção que queremos que a snake tenha
 let direction = "right";
+//Math.floor retorna um numero aleatorio ate 1
+let food = {
+  x: Math.floor(Math.random() * 15 + 1) * box,
+  y: Math.floor(Math.random() * 15 + 1) * box,
+};
 
 //function starting canvas
 function createBG() {
@@ -32,6 +37,12 @@ function createSnake() {
   }
 }
 
+//funcao que irá desenhar a comida
+function drawFood() {
+  context.fillStyle = "#A52A2A";
+  context.fillRect(food.x, food.y, box, box);
+}
+
 //pega o keydown(evento de click do teclado) e chama update()
 document.addEventListener("keydown", update);
 
@@ -45,15 +56,15 @@ function update(event) {
 
 //Function que atualiza o jogo de tempos em tempos
 function startGame() {
-  //atravessar as paredes com a snake no olano cartesiano
+  //atravessar as paredes com a snake no plano cartesiano
   if (snake[0].x > 22 * box && direction == "right") snake[0].x = 0;
   if (snake[0].x < 0 && direction == "left") snake[0].x = 23 * box;
-  if (snake[0].y > 9 * box && direction =="down") snake[0].y =0;
+  if (snake[0].y > 9 * box && direction == "down") snake[0].y = 0;
   if (snake[0].y < 0 && direction == "up") snake[0].y = 10 * box;
-
 
   createBG();
   createSnake();
+  drawFood();
 
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
@@ -76,5 +87,5 @@ function startGame() {
   snake.unshift(newHead);
 }
 
-//Intervalo de 100 milisegundos para iniciar o jogo e renovar o mesmo
+//Intervalo de milisegundos para iniciar o jogo e renovar o mesmo
 let game = setInterval(startGame, 200);
