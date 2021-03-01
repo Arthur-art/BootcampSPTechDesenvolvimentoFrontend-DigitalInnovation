@@ -1,0 +1,8 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#snake {
+  margin-top: 5rem;
+}

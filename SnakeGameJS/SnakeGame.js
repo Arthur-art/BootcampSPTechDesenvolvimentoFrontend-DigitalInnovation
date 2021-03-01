@@ -2,17 +2,17 @@ let canvas = document.getElementById("snake");
 //reenderiza o desenho dentro do canvas
 let context = canvas.getContext("2d");
 //32 pixel cada quadrado em que o jogo sera montado
-let box = 64;
+let box = 32;
 /*A cobra do jogo sera feita com um array de coordenadas, a cobra irá andar da seguinte forma:
 "adiciona um dado e retira o ultimo"*/
 let snake = [];
 snake[0] = {
   x: 8 * box,
-  y: 8 * box,
+  y: 8 * box
 };
 //variavel com a direção que queremos que a snake tenha
 let direction = "right";
-//Math.floor retorna um numero aleatorio ate 1
+//Math.floor retorna um numero aleatorio ate 1 onde surgira a food
 let food = {
   x: Math.floor(Math.random() * 15 + 1) * box,
   y: Math.floor(Math.random() * 15 + 1) * box,
@@ -23,7 +23,7 @@ function createBG() {
   //fillStyle trabalha com o canvas,construindo o background da aplicacao
   context.fillStyle = "#222733";
   //fillRect desenha o retangulo onde ira acontecer o jogo
-  context.fillRect(0, 0, 32 * box, 32 * box);
+  context.fillRect(0, 0, 16 * box, 16 * box);
 }
 
 function createSnake() {
@@ -56,11 +56,20 @@ function update(event) {
 
 //Function que atualiza o jogo de tempos em tempos
 function startGame() {
-  //atravessar as paredes com a snake no plano cartesiano
-  if (snake[0].x > 22 * box && direction == "right") snake[0].x = 0;
-  if (snake[0].x < 0 && direction == "left") snake[0].x = 23 * box;
-  if (snake[0].y > 9 * box && direction == "down") snake[0].y = 0;
-  if (snake[0].y < 0 && direction == "up") snake[0].y = 10 * box;
+
+  //atravessando as paredes com a snake no plano cartesiano
+  if (snake[0].x > 16 * box && direction == "right") snake[0].x = 0;
+  if (snake[0].x < 0 && direction == "left") snake[0].x = 15 * box;
+  if (snake[0].y > 16 * box && direction == "down") snake[0].y = 0;
+  if (snake[0].y < 0 && direction == "up") snake[0].y = 15 * box;
+
+  //Encerrando o jogo caso a posicao da cabeca da snake seja a mesma do corpo na posicao de indice do array
+  for(i=1; i<snake.length; i++){
+    if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+      clearInterval(game);
+      alert('Game Over');
+    }
+  }
 
   createBG();
   createSnake();
@@ -75,17 +84,22 @@ function startGame() {
   if (direction == "up") snakeY -= box;
   if (direction == "down") snakeY += box;
 
-  //retira o ultimo elemento do array pop()
-  snake.pop();
+  //aumentando a snake conforme ela passa pela food
+  if(snakeX != food.x || snakeY != food.y){
+    snake.pop();
+  }else{
+    food.x = Math.floor(Math.random() * 15 + 1) * box;
+    food.y = Math.floor(Math.random() * 15 + 1) * box;
+  }
 
   //Cabeça da snake
   let newHead = {
     x: snakeX,
-    y: snakeY,
+    y: snakeY
   };
   //unshift adiciona um item no comeco do array
   snake.unshift(newHead);
 }
 
 //Intervalo de milisegundos para iniciar o jogo e renovar o mesmo
-let game = setInterval(startGame, 200);
+let game = setInterval(startGame, 100);
