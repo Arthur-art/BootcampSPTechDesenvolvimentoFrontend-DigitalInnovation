@@ -1,6 +1,6 @@
 //Arrow function
 function fn(){
-    return console.log('Code here');
+   return console.log('Code here');
 }
 
 const arrowfn = () => console.log('Code here');
