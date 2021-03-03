@@ -66,4 +66,14 @@ const arrayEvery = arrayNumber.every((value)=>{
 })
 console.log(arrayEvery);
 
+//A função Math.floor(x) retorna o menor número inteiro dentre o número "x".(Arredonda pra baixo)
+
+const floor = Math.floor(12.1);
+console.log(floor)
+
+//Math.ceil() que retorna o maior número inteiro que é maior que o número passado, por exemplo Math.(arredonda pra cima)
+
+const ceil = Math.ceil(12.1);
+console.log(ceil)
+
 

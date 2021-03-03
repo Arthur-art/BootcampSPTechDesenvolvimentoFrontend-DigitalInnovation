@@ -4,13 +4,13 @@
   Na sequência mostre o valor lido e a relação de notas necessárias.
   */
 
-let valor = parseInt(gets());
-let notas = [100, 50, 20, 10, 5, 2, 1];
-let saque = '';
 
-console.log(valor);
-for(let i = 0; i < notas.length; i++){
-    saque +=`${Math.floor(valor/notas[i])} nota(s) de R$ ${(notas[i])},00\n`;
-    valor %= notas[i];
+let value = 1850;
+let arrayNotes = [100,50,20,10,5,2,1];
+let html = '';
+console.log(value)
+for(let i in arrayNotes){
+  html+=`${Math.floor(value/arrayNotes[i])} nota(s) de R$ ${(arrayNotes[i])},00\n`;
+  value %= arrayNotes[i];
 }
-console.log(saque);
+console.log(html);
