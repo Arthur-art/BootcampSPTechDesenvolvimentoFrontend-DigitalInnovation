@@ -15,7 +15,7 @@ const filterFunction = (()=>{
 
     
     console.log(uniqueProducts);
-})();
+});
 
 
 
@@ -45,7 +45,17 @@ const filterObject = (()=>{
     
     ];
 
-   let petsAge =  pets.filter((pets)=>pets.age==14);
-   //console.log(petsAge)
+    let newAge = ((age)=>age<12);
+    let filterNewAge = pets.filter((pets)=>{
+        return newAge(pets.age);
+    })
+   
+    console.log(filterNewAge)
 
-})();
+   })();
+   
+   
+  
+
+
+
