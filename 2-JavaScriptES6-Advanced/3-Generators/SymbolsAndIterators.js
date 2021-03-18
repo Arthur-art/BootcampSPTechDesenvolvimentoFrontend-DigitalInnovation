@@ -47,7 +47,7 @@ for(let value of array){
 
 //Deixando um objeto iteravel
 const obj2 = {
-    value:[10,20,30,40],
+    value:[10,20,30,40,50],
     [Symbol.iterator](){
         let i = 0;
         return{
