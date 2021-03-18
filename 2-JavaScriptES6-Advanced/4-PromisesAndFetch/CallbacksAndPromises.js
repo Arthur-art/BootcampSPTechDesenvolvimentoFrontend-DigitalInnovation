@@ -52,6 +52,9 @@ const myPromise2 = () => new Promise((resolve,reject)=>{
 
 //Executando functions ao mesmo tempo em paralelo
 Promise.all([myPromise(), myPromise2()]).then((response)=>console.log(response));
+
+//Executando a primeira que foi resolvida
+Promise.race([myPromise(), myPromise2()]).then((response)=>console.log(response));
 /*/
 myPromise()
 .then((resolve)=>{
