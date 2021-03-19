@@ -1,0 +1,22 @@
+/*/
+
+#TDD(Test Driven Development)
+
+É um dos pilares do Extrem Programming, consiste em testar e redatorar 
+em pequenos ciclos, onde voce escreve o teste antes do codigo,
+faz o mesmo passar e refatora o codigo,
+
+Escrita do teste -> escrita do codigo -> refatoracao
+
+/*/
+
+
+
+/*/
+
+#BDD(Behavior Driven Development)
+
+Tecnica de desenvolvimento agil que visa integrar regras de negocio
+com linguagens de programacao
+
+/*/
