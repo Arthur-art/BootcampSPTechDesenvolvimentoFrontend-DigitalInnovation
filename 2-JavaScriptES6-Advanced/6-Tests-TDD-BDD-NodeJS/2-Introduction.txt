@@ -32,4 +32,6 @@ com linguagens de programacao
 
  crie uma parta com o nome test e dentro um arquivo "math.spec.js"
 
+ npm run test
+
 /*/
