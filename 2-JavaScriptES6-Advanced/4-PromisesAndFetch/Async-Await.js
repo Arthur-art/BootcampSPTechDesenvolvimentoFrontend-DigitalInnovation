@@ -1,19 +1,24 @@
-// ES7 -  Await  
+/*/ ES7 -  Await  - usando quando você precisa esperar uma promise resolver
 
 const Timeout = () => new Promise((resolve,reject)=>{
     setTimeout(()=>{
-        resolve('Data')
+        resolve('Data ok')
     }, 1000)
 })
 
 const simpleFunction = async ()=>{
+    //espera o timeout resolver para terminar de executar a function
     const data = await Timeout();
-    return data;
+    console.log(data)
+    const dataJson = await fetch('https://swapi.dev/api/planets/1/').then(resStream => resStream.json())
+    return dataJson;
 }
 simpleFunction()
 .then(response=>{
     console.log(response)
 })
+
+/*/
 
 /* Async/
 
@@ -35,3 +40,4 @@ sum(6,6)
 
 
 /*/
+
