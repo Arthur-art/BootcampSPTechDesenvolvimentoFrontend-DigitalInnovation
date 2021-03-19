@@ -20,3 +20,16 @@ Tecnica de desenvolvimento agil que visa integrar regras de negocio
 com linguagens de programacao
 
 /*/
+
+
+#instalando o mocha
+
+/*/
+
+ npm i --save-dev mocha
+
+ npm init -y
+
+ crie uma parta com o nome test e dentro um arquivo "math.spec.js"
+
+/*/
