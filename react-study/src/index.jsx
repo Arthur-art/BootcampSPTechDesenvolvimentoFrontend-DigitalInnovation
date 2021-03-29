@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Button from './components/Button';
-import ListKeys from './components/ListsKeys';
-
+import Post from './components/Post'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <Button />
-    <ListKeys />
   </React.StrictMode>,
   document.getElementById('root')
 );
