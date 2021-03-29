@@ -19,11 +19,14 @@ export default class App extends React.Component {
         </ul>
     )
 
+    const sum = <h1>2 + 3 é igual a {2+3}</h1>
+
     return (
       <div>
         {h1}
         {tagA}
         {myList}
+        {sum}
       </div>
     );
   }
