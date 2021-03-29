@@ -1,19 +1,26 @@
-/*function App() {
-  return (
-    <h1>Hello World</h1>
-  );
-}*/
-const buttonA = <button>Primeiro button</button>
-const buttonB = <button>Segundo button</button>
+const buttonA = <button>Button true</button>;
+const buttonB = <button>Button false</button>;
 
-const App = ()=>{
-  return (
+const visible = true;
+
+const App = () => {
+  const buttonAshow = ()=>(
     <div>
-      <p>Hello World</p>
       {buttonA}
+    </div>
+  )
+  const buttonBshow = ()=>(
+    <div>
       {buttonB}
     </div>
   )
-}
+
+  return (
+    <div>
+      <p>Hello World</p>
+      {visible ? buttonAshow() : buttonBshow()}
+    </div>
+  );
+};
 
 export default App;
