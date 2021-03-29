@@ -1,7 +1,9 @@
 import React from "react";
 export default class App extends React.Component {
   render() {
+
     const h1 = <h1 className="title">Codecademy</h1>;
+
     const tagA = (
       <div>
         <a href="#" className="link">
@@ -14,7 +16,6 @@ export default class App extends React.Component {
         <ul>
             <li>Aprendendo</li>
             <li>React</li>
-            <li>na</li>
             <li>codecademy</li>
         </ul>
     )
