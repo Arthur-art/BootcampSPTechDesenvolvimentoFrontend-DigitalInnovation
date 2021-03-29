@@ -9,7 +9,7 @@ const buttonB = <button>Segundo button</button>
 const App = ()=>{
   return (
     <div>
-      <p>Pentrei aqui</p>
+      <p>Hello World</p>
       {buttonA}
       {buttonB}
     </div>
