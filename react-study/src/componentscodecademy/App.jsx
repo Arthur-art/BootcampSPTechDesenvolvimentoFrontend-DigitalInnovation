@@ -19,6 +19,10 @@ export default class App extends React.Component {
             <li>codecademy</li>
         </ul>
     )
+    const imgGit = 'https://avatars.githubusercontent.com/u/54858003?v=4';    
+    const imgShow =<div>
+         <img src={imgGit} alt=""/>
+    </div>
 
     const sum = <h1>2 + 3 é igual a {2+3}</h1>
 
@@ -28,6 +32,7 @@ export default class App extends React.Component {
         {tagA}
         {myList}
         {sum}
+        {imgShow}
       </div>
     );
   }
