@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './componentscodecademy/App'
+import Oneclick from './componentscodecademy/Oneclick';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Oneclick />
   </React.StrictMode>,
   document.getElementById('container')
 );

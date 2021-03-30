@@ -1,5 +1,5 @@
 import React from "react";
-export default class App extends React.Component {
+export default class ElementsBasic extends React.Component {
   render() {
 
     const h1 = <h1 className="title">Codecademy</h1>;
