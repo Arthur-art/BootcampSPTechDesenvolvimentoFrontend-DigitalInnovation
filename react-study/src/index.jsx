@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import IfElse from './componentscodecademy/IfElse';
+import Operator from './componentscodecademy/Operator'
 
 ReactDOM.render(
   <React.StrictMode>
-    <IfElse />
+    <Operator />
   </React.StrictMode>,
   document.getElementById('container')
 );

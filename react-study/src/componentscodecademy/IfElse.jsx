@@ -20,7 +20,7 @@ export default class IfElse extends React.Component {
       img = <img src={pics.doggy} alt="" />;
     }*/
 
-    const img = cointToss()=== "heads" ? <img src={pics.kitty} alt=""/> : <img src={pics.doggy} alt=""/>;
+    const img = cointToss() === "heads" ? <img src={pics.kitty} alt=""/> : <img src={pics.doggy} alt=""/>;
 
     return <div>{img}</div>;
   }
