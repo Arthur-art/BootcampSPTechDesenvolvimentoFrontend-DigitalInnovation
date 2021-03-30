@@ -12,13 +12,15 @@ export default class IfElse extends React.Component {
       doggy:
         "https://content.codecademy.com/courses/React/react_photo-puppy.jpeg",
     };
-    let img;
+    /*let img;
 
-    if (cointToss === "tails") {
+    if (cointToss() === "heads") {
       img = <img src={pics.kitty} alt="" />;
     } else {
       img = <img src={pics.doggy} alt="" />;
-    }
+    }*/
+
+    const img = cointToss()=== "heads" ? <img src={pics.kitty} alt=""/> : <img src={pics.doggy} alt=""/>;
 
     return <div>{img}</div>;
   }
