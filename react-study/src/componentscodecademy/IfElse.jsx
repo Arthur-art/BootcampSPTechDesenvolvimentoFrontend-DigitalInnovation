@@ -20,8 +20,18 @@ export default class IfElse extends React.Component {
       img = <img src={pics.doggy} alt="" />;
     }*/
 
-    const img = cointToss() === "heads" ? <img src={pics.kitty} alt=""/> : <img src={pics.doggy} alt=""/>;
+    //const img = cointToss() === "heads" ? <img src={pics.kitty} alt=""/> : <img src={pics.doggy} alt=""/>;
 
-    return <div>{img}</div>;
+    const MathCalc = Math.random() < 0.5;
+    let message;
+    if(MathCalc){
+      message = <h2>Eu amo matematica</h2>
+    }else{
+      message = <h2>Eu amo React</h2>
+    }
+
+    return <div>
+      {message}
+      </div>;
   }
 }

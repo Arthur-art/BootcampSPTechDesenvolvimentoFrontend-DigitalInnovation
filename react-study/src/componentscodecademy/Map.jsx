@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class Map extends React.Component {
+class Map extends React.Component {
   render() {
     const string = ["Aprendendo", "React", "Codecademy"];
     const liststring = string.map((value) => {
@@ -11,3 +11,4 @@ export default class Map extends React.Component {
     return <div>{list}</div>;
   }
 }
+export default Map;
