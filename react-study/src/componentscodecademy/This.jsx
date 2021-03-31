@@ -1,8 +1,12 @@
 import React from 'react'
 
 export default class This extends React.Component{
-    get name(){
+    get Name(){
         return 'This - Arthur';
+    }
+
+    CreateAlert(){
+        alert('Alert')
     }
 
     render(){
@@ -11,7 +15,8 @@ export default class This extends React.Component{
 
         return (
             <div>
-                <h1>{this.name}</h1>
+                <h1>{this.Name}</h1>
+                <button onClick={this.CreateAlert}>Alert</button>
             </div>
         )
     }
