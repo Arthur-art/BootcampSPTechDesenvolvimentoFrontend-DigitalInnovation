@@ -27,15 +27,17 @@ export default class CssComponent extends React.Component{
             justifyContent: 'center',
             alignItems: 'center'
         }
-        const div = <div style={divStyle} >Penetrei aqui</div>
-        const button = <button onClick={this.colorState}>Trocar para preto</button>
-        const button2 = <button onClick={this.colorState}>Trocar para azul</button>
+        const divBlue = <div style={divStyle} >Azul</div>
+        const divBlack = <div style={divStyle} >Preto</div>
+        const buttonBlack = <button onClick={this.colorState}>Trocar para preto</button>
+        const buttonBlue = <button onClick={this.colorState}>Trocar para azul</button>
 
         return (
             <div>
-                {div}
-                {this.state.color === 'blue' && button}
-                {this.state.color === 'black' &&  button2}
+                {this.state.color === 'blue' && divBlue}
+                {this.state.color === 'black' && divBlack}
+                {this.state.color === 'blue' && buttonBlack}
+                {this.state.color === 'black' &&  buttonBlue}
             </div>
         )
     }
