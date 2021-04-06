@@ -31,4 +31,14 @@
       console.log(html)
   }
   
-  showNumber(evenNumber, 11)
+
+  const Key = prompt('Digite uma senha')
+  const checkKey = prompt('Digite a senha novamente')
+
+  const checkPass = (key1,key2)=>{
+        const pass = key1 === key2 ? true : false;
+        console.log(key1, key2)
+        return pass;
+  }
+  console.log(checkPass(Key, checkKey))
+  
