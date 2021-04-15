@@ -1,11 +1,12 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import ReactDOM from 'react-dom'
-
+import App from './components/Context-Api/App'
+//import registerServiceWorker from './registerServiceWorker'
 
 ReactDOM.render(
-  <React.StrictMode>
-
-  </React.StrictMode>,
+  <Fragment>
+    <App/>
+  </Fragment>,
   document.getElementById('container')
 );
 
