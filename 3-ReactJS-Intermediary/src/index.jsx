@@ -1,11 +1,10 @@
 import React,{Fragment} from 'react'
 import ReactDOM from 'react-dom'
-import App from './components/Context-Api/App'
-//import registerServiceWorker from './registerServiceWorker'
+import {ToDoList} from './components/ToDoList/ToDoList'
 
 ReactDOM.render(
   <Fragment>
-    <App/>
+    <ToDoList/>
   </Fragment>,
   document.getElementById('container')
 );
