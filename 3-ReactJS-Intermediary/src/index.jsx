@@ -1,12 +1,11 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
-import {ToDoList} from './components/ToDoList/ToDoList'
+import { Forms } from './components/Forms'
 
 ReactDOM.render(
   <Fragment>
-    <ToDoList/>
+    <Forms />
   </Fragment>,
   document.getElementById('container')
 );
 
- 
